@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questomatic</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/9/519/764/mountains-best-for-desktop-background-wallpaper-preview.jpg');
+            background-size: 110%;
+        }
+        .container {
+            background-color: #ffffffd0;
+            border-radius: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-top: 50px;
+            max-width: 600px;
+        }
+        .btn-primary {
+            background-color: #5fa3ec;
+            border-color: #000000;
+        }
+        .btn-primary:hover {
+            background-color: #1d7426;
+            border-color: #000000;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .generated-questions {
+            margin-top: 30px;
+        }
+        
+        .generated-questions a{
+            width: 20%;
+            background-color: hsl(0, 0%, 0%);
+            color: aliceblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1px;
+            margin-bottom: 7px;
+            margin-left: 77%;
+            text-align: center;  
+            position: left; 
+        }
+        .generated-questions a:hover {
+            background-color: #ffffff;
+            color: rgb(2, 36, 255);
+            }
+        .generated-questions h2 {
+            color: #4c0211;
+            border-bottom: 2px solid #0b0b0b;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        .generated-questions ul {
+            list-style: none;
+            padding: 0;
+        }
+        .generated-questions ul li {
+            margin-bottom: 10px;
+        }
+        .alert-danger {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Questomatic</h1>
+        <form method="post" action="/" enctype="multipart/form-data">
+            <div class="form-group">     
+                <label for="file">Upload File:</label>
+                <input type="file" name="file" id="file" class="form-control-file" accept=".pdf, .txt" required>
+            </div>
+            <div class="form-group">
+                <label for="num_questions">Number of Questions:</label>
+                <input type="number" name="num_questions" id="num_questions" class="form-control" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="language">Language:</label>
+                <select name="language" id="language" class="form-control" required>
+                    <option value="english">English</option>
+                    <option value="marathi">Marathi</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Generate Questions</button>
+        </form>
+        
+        {% if questions %}
+        <div class="generated-questions">
+            <h2 class="text-center mb-3">Generated Questions</h2>
+            <a href="{{ url_for('download_pdf') }} "  class="btn">Download</a>
+            <ul>
+                {% for question in questions %}
+                <li>{{ question }}</li>
+                {% endfor %}
+            </ul>
+
+          
+        </div>
+        {% endif %}
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+        <p class="text-center mt-3">
+            <a href="/logout">Logout</a>
+        </p>
+        </div>
+</body>
+
+</html>
