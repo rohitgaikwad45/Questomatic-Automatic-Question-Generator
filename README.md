@@ -4,7 +4,7 @@ Questomatic - Automated Question Generator
 Questomatic is a Flask-based web application that allows users to upload text files and generate questions based on the content. The application supports both English and Marathi languages for question generation. It also includes user authentication and allows downloading the generated questions in PDF format with a custom header and footer.
 
 
-Features
+# Features
 
 
 User Authentication: Secure login and registration using Flask-Login and Flask-Bcrypt.
@@ -21,7 +21,7 @@ FPDF: Used to create PDFs for the generated questions.
 Stanza: NLP library used for generating questions.
 
 
-Setup and Installation
+# Setup and Installation
 
 Python 3.x
 MySQL
@@ -31,14 +31,6 @@ pip (Python package installer)
 Installation Steps
 Clone the Repository
 
-bash
-
-git clone https://github.com/yourusername/questomatic.git
-
-cd questomatic
-Create a Virtual Environment
-
-bash
 
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
@@ -89,7 +81,7 @@ The PDF will include a header "Generated Questions" and a footer with your usern
 
 
 
-Project Structure 
+# Project Structure 
 
 
 ├── app.py                  # Main Flask application file
@@ -104,3 +96,20 @@ Project Structure
 │   └── js/                 # JavaScript files
 ├── uploads/                # Directory for uploaded files and generated PDFs
 └── README.md               # Project README file
+
+
+# Requirements
+
+Flask==2.1.1
+Flask-Login==0.6.2
+Flask-SQLAlchemy==2.5.1
+Flask-Bcrypt==0.7.1
+Werkzeug==2.1.1
+mysqlclient==2.1.0
+SQLAlchemy==1.4.31
+FPDF==1.7.2
+stanza==1.4.0
+PyMuPDF==1.18.19
+transformers==4.28.1
+torch==2.0.1
+
