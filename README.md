@@ -40,11 +40,19 @@ bash
 
 pip install -r requirements.txt
 Configure the Database
-
+## MySQL Setup
 Ensure MySQL is installed and running.
 Create a new database named questomatic_db.
 Update the SQLALCHEMY_DATABASE_URI in app.py with your MySQL username and password.
 Run Database Migrations
+
+and give below Commands
+create database questomatic_db;
+use questomatic_db;
+CREATE USER 'questomatic_user1'@'localhost' IDENTIFIED BY 'root';
+GRANT ALL PRIVILEGES ON questomatic_db.* TO 'questomatic_user'@'localhost';
+FLUSH PRIVILEGES;
+
 
 bash
 
