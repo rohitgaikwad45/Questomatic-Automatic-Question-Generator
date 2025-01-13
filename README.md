@@ -92,18 +92,18 @@ The PDF will include a header "Generated Questions" and a footer with your usern
 ## Project Structure 
 
 
-├── app.py                  # Main Flask application file
-├── question_generation_english.py  # English question generation logic
-├── question_generation_marathi.py  # Marathi question generation logic
-├── templates/
-│   ├── index.html          # Main page template
-│   ├── login.html          # Login page template
-│   └── register.html       # Registration page template
-├── static/
-│   ├── css/                # CSS files
-│   └── js/                 # JavaScript files
-├── uploads/                # Directory for uploaded files and generated PDFs
-└── README.md               # Project README file
+├── app.py                  # Main Flask application file  
+├── question_generation_english.py  # English question generation logic  
+├── question_generation_marathi.py  # Marathi question generation logic  
+├── templates/  
+│   ├── index.html          # Main page template  
+│   ├── login.html          # Login page template  
+│   └── register.html       # Registration page template  
+├── static/  
+│   ├── css/                # CSS files  
+│   └── js/                 # JavaScript files  
+├── uploads/                # Directory for uploaded files and generated PDFs  
+└── README.md               # Project README file  
 
 
 ## Requirements
